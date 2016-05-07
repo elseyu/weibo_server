@@ -7,6 +7,7 @@
  */
 
 require_once 'global.defines.php';
+require_once 'database.config.php';
 
 define('__APP_NAME', 'Demos');
 define('__APP_VERSION', '1.0');
@@ -20,7 +21,7 @@ define('__APP_PATH_DAO', realpath(__APP . '/dao'));
 define('__APP_PATH_TPL', realpath(__APP . '/tpl'));
 
 /**
- * 参数定义
+ * URL参数定义
  */
 define('__SERVER', 'server');
 define('__ACTION', 'action');

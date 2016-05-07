@@ -31,7 +31,7 @@ define('__WWW',realpath(__ROOT . '/www'));
 //var_dump(__WWW);
 
 define('__FRAMEWORK', realpath(__ROOT . '/framework'));
-var_dump(__FRAMEWORK);
+//var_dump(__FRAMEWORK);
 
 //var_dump(get_include_path());
 set_include_path(get_include_path() .  PATH_SEPARATOR . __APP .  PATH_SEPARATOR . __WWW);
