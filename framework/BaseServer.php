@@ -8,7 +8,6 @@
  */
 require_once 'BaseModel.php';
 class BaseServer {
-
     /**
      * @param $code
      * @param $message
@@ -27,6 +26,3 @@ class BaseServer {
         header("Location: $url");
     }
 }
-
-$test = new BaseServer();
-$test->render('','','');
