@@ -14,8 +14,28 @@ class BaseServer {
      * @param $result
      * 打印方法
      */
-    function render($code, $message, $result) {
+    function render($code, $message, $result = '') {
 //        echo 'Hello!!';
+        if(is_array($result)) {
+            foreach($result as $name => $data) {
+                if(strpos($name,'.list')) {
+                    $model = trim(str_replace('.list','',$name));
+                    foreach((array)$data as $key => $value) {
+                        $result[$name][$key] = M($model,$value);
+                    }
+                } else {
+                    $model = trim($name);
+                    $result[$name] = M($model,$data);
+                }
+            }
+        }
+
+        echo json_encode(array(
+            'code' => $code,
+            'message' => $message,
+            'result' => $result
+        ));
+        exit;
     }
 
     /**
@@ -24,5 +44,13 @@ class BaseServer {
      */
     function forward($url) {
         header("Location: $url");
+    }
+
+    function doAuth() {
+        if(!isset($_SESSION['customer'])) {
+            $this->render('10001','Please login first','');
+        } else {
+            $this->customer = $_SESSION['customer'];
+        }
     }
 }

@@ -15,11 +15,13 @@ $serverParam = !empty($_GET[__SERVER]) ? $_GET[__SERVER] : 'Index';
  * 实现自动加载
  */
 function __autoload($className) {
-    $baseClasses = array('AppMySQL', 'BaseModel','BaseServer');
+    $baseClasses = array('AppMySQL', 'BaseModel','BaseServer','ModelFactory');
     if(in_array($className,$baseClasses)) {
         require_once __FRAMEWORK. DIRECTORY_SEPARATOR . $className. '.php';
     } else if(substr($className,-6) == 'Server') {
         require_once __APP_PATH_SERVER . DIRECTORY_SEPARATOR . $className . '.php';
+    } else if(substr($className,-3) == 'Dao') {
+        require_once __APP_PATH_DAO . DIRECTORY_SEPARATOR . $className . '.php';
     }
 }
 

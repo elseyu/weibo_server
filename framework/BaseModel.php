@@ -14,5 +14,5 @@ class BaseModel {
     }
 }
 
-$model = new BaseModel();
+//$model = new BaseModel();
 //var_dump($model);

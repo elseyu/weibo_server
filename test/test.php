@@ -5,8 +5,7 @@
  * Date: 2016/5/8
  * Time: 14:57
  */
-if(isset($_POST['user']) && $_POST['pass']) {
-    $userName = $_POST['user'];
-    $pass = $_POST['pass'];
-    echo $userName . '___________' . $pass;
-}
+$sql = 'select * from ' . 'customer' .
+    ' where ' . 'customer' . '.name = ' . 'name' .
+    ' and ' . 'customer' . '.pass = ' . 'pass';
+echo $sql;

@@ -15,6 +15,8 @@ class DebugServer extends BaseServer{
     private $apiList;
     private $apiStat;
 
+    private $serverApiList;
+
     function __construct() {
         $this->index = '?server=debug';
         $this->apiAuth = '?server=debug&action=auth';
@@ -22,6 +24,8 @@ class DebugServer extends BaseServer{
         $this->apiHome = '?server=debug&action=apiHome';
         $this->apiList = '?server=debug&action=apiList';
         $this->apiStat = '?server=debug&action=apiStat';
+
+        $this->serverApiList = $this->getServerApiList();
 
         $this->printHeader();
     }
@@ -71,6 +75,11 @@ class DebugServer extends BaseServer{
         }
     }
 
+    public function quitAction() {
+        $_SESSION['admin'] = null;
+        $this->forward($this->index);
+    }
+
     public function apiHomeAction() {
         $this->checkAdmin();
         $this->printMenu();
@@ -82,6 +91,54 @@ class DebugServer extends BaseServer{
         echo "<hr/>\n";
 
         echo "<b>Welcome <font color=red>{$this->admin['name']}</font></b>";
+    }
+
+    public function apiStatAction() {
+        $this->checkAdmin();
+        $this->printMenu();
+        $html = "<table class='tbfix' cellpadding=1 cellspacing=1>\n";
+        foreach ((array) $this->serverApiList as $serviceName => $actionList) {
+            $html .= "<tr><td class='title' colspan=4>{$serviceName}</td></tr>\n";
+            foreach ((array) $actionList as $actionName => $actionConfig) {
+                $actionKey = "$serviceName::$actionName";
+                $visit = 0; // count visit count
+                $runtime = 0; // count average visit runtime
+                $html .= "<tr><td>{$actionName}</td><td>接口地址：{$actionConfig[0]}</td><td>访问次数：{$visit}</td><td>平均响应时间：{$runtime}</td></tr>\n";
+            }
+        }
+        $html .= "</table>\n";
+        echo $html;
+    }
+
+    public function apiListAction() {
+        $this->checkAdmin();
+        $this->printMenu();
+        $html = "<table class='tbfix' cellpadding=1 cellspacing=1>\n";
+        foreach ((array) $this->serverApiList as $serviceName => $actionList) {
+            $html .= "<tr><td class='title' colspan=4>{$serviceName}</td></tr>\n";
+            foreach ((array) $actionList as $actionName => $actionConfig) {
+                $html .= "<tr><td>{$actionName}</td><td>{$actionConfig['0']}</td><td>{$actionConfig['0']}</td><td><a href='apiTest?serviceName={$serviceName}&actionName={$actionName}'>测试</a></td></tr>\n";
+            }
+        }
+        $html .= "</table>\n";
+        echo $html;
+    }
+
+    protected function getServerApiList() {
+        $serverApiList = array();
+        foreach(glob(__APP_PATH_SERVER . DIRECTORY_SEPARATOR . '*.php') as $classFile) {
+            $className = basename($classFile,'.php');
+            if($classFile && $className) {
+                $class = new ReflectionClass($className);
+                $methodList = $class->getMethods();
+                foreach($methodList as $method) {
+                    if(preg_match('/Action$/',$method->name)) {
+                        $serverApiList[$className][$method->name] = $method->name;
+                    }
+                }
+            }
+        }
+        return $serverApiList;
     }
 
     private function checkAdmin() {

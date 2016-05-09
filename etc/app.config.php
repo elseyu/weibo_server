@@ -8,6 +8,7 @@
 
 require_once 'global.defines.php';
 require_once 'database.config.php';
+require_once 'global.datamap.php';
 
 define('__APP_NAME', 'Demos');
 define('__APP_VERSION', '1.0');
@@ -25,5 +26,9 @@ define('__APP_PATH_TPL', realpath(__APP . '/tpl'));
  */
 define('__SERVER', 'server');
 define('__ACTION', 'action');
+
+define('__SERVER_URL','http://api.demos.app.com:8001/');
+define('__WEBSITE_URL','http://demos.app.com:8002/');
+
 
 
