@@ -35,8 +35,10 @@ define('__FRAMEWORK', realpath(__ROOT . '/framework'));
 
 define('__UTILS', realpath(__ROOT . '/utils'));
 
+define('__LIB', realpath(__ROOT . '/lib'));
+
 //var_dump(get_include_path());
-set_include_path(get_include_path() .  PATH_SEPARATOR . __APP .  PATH_SEPARATOR . __WWW);
+//set_include_path(get_include_path() .  PATH_SEPARATOR . __APP .  PATH_SEPARATOR . __WWW);
 //var_dump(get_include_path());
 
 

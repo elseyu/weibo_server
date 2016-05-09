@@ -7,6 +7,7 @@
  */
 
 require_once '../../etc/app.config.php';
+//session_start();
 
 $serverParam = !empty($_GET[__SERVER]) ? $_GET[__SERVER] : 'Index';
 

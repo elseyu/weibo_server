@@ -8,6 +8,13 @@
  */
 require_once 'BaseModel.php';
 class BaseServer {
+
+    protected $customer;
+
+    public function __construct() {
+        //session_start();
+    }
+
     /**
      * @param $code
      * @param $message

@@ -12,6 +12,7 @@ class BaseModel {
     function __construct() {
         $this->dao = AppMySQL::getInstance(DBConfig::$config);
     }
+
 }
 
 //$model = new BaseModel();

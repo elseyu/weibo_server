@@ -21,6 +21,7 @@ class CustomerDao extends BaseModel{
         $user = $this->dao->getOneRow($sql);
 //        var_dump($user);
         if($user) {
+            $user['faceUrl'] = __WEBSITE_URL . 'faces/default' . $user['face'];
             return $user;
         } else {
             return false;
@@ -39,24 +40,40 @@ class CustomerDao extends BaseModel{
 
     public function addBlogCount($id,$count = 1) {
         $sql = "UPDATE $this->tableName SET blogcount = blogcount+$count WHERE id = $id";
-        $this->dao->exec($sql);
+        $result = $this->dao->exec($sql);
+        return $result;
     }
 
     public function addFansCount($id,$count = 1) {
         $sql = "UPDATE $this->tableName SET fanscount = fanscount+$count WHERE id = $id";
-        $this->dao->exec($sql);
+        $result = $this->dao->exec($sql);
+        return $result;
     }
 
     public function getListByPage($pageId = 0) {
         $sql = "select * from $this->tableName
             ORDER  BY $this->tableName.uptime ";
-        $customer = $this->dao->getOneRow($sql);
+        $customer = $this->dao->getRows($sql);
 //        var_dump($customer);
         return $customer;
+    }
+
+    public function updateInfo($id,$key,$value) {
+        $sql = "UPDATE $this->tableName SET $key = '$value' WHERE id = $id";
+        $result = $this->dao->exec($sql);
+        return $result;
+    }
+
+    public function createCustomer($name, $pass, $sign, $face) {
+        $sql = "INSERT INTO customer(name, pass, sign, face)
+                  VALUES ('$name','$pass','$sign','$face')";
+        $result = $this->dao->exec($sql);
+        return $result;
     }
 }
 
 //$test = new CustomerDao();
-////$test->addFansCount(1);
-////$test->doAuth('test','test');
+//$test->addFansCount(1);
+//$test->doAuth('test','test');
 //$test->getListByPage();
+//$test->updateInfo(1,'sign','我更新啦！！！');

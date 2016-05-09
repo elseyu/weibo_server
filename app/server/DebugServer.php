@@ -103,7 +103,7 @@ class DebugServer extends BaseServer{
                 $actionKey = "$serviceName::$actionName";
                 $visit = 0; // count visit count
                 $runtime = 0; // count average visit runtime
-                $html .= "<tr><td>{$actionName}</td><td>接口地址：{$actionConfig[0]}</td><td>访问次数：{$visit}</td><td>平均响应时间：{$runtime}</td></tr>\n";
+                $html .= "<tr><td>{$actionName}</td><td>接口地址：{$actionConfig['action']}</td><td>访问次数：{$visit}</td><td>平均响应时间：{$runtime}</td></tr>\n";
             }
         }
         $html .= "</table>\n";
@@ -117,23 +117,77 @@ class DebugServer extends BaseServer{
         foreach ((array) $this->serverApiList as $serviceName => $actionList) {
             $html .= "<tr><td class='title' colspan=4>{$serviceName}</td></tr>\n";
             foreach ((array) $actionList as $actionName => $actionConfig) {
-                $html .= "<tr><td>{$actionName}</td><td>{$actionConfig['0']}</td><td>{$actionConfig['0']}</td><td><a href='apiTest?serviceName={$serviceName}&actionName={$actionName}'>测试</a></td></tr>\n";
+                $html .= "<tr><td>{$actionName}</td><td>{$actionConfig['title']}</td><td>{$actionConfig['action']}</td><td><a href='?server=debug&action=apiTest&serviceName={$serviceName}&actionName={$actionName}'>测试</a></td></tr>\n";
             }
         }
         $html .= "</table>\n";
         echo $html;
     }
 
+    public function apiTestAction ()
+    {
+        $this->checkAdmin();
+        $this->printMenu();
+
+        echo "<script type='text/javascript' src='/js/debug/apiTest.js'></script>\n";
+        echo "<script type='text/javascript'>\n";
+        echo "$(document).ready(function(){";
+        echo "var header={};";
+        echo "$('.doTest').click(function(){apiTest(header)});";
+        echo "});\n";
+        echo "</script>\n";
+
+        $serviceName = $_GET['serviceName'];
+        $actionName = $_GET['actionName'];
+        $configList = $this->serverApiList[$serviceName][$actionName];
+        if (!$configList) {
+            echo "Error : can not found '$serviceName::$actionName'.\n";
+            exit;
+        }
+
+        // append sid
+//        $configList['action'] = $this->url->format($configList['action']);
+
+        $action = $configList['action'];
+        $method = $configList['method'];
+        $html = "<input type='hidden' id='action' value='{$action}'/>\n";
+        $html .= "<input type='hidden' id='method' value='{$method}'/>\n";
+        $html .= "<table class='tbcom' cellpadding=1 cellspacing=1>\n";
+        $html .= "<tr><td class='title' colspan=2>{$serviceName} > {$actionName}</td></tr>\n";
+        foreach ((array) $configList as $configKey => $configVal) {
+            // action params
+            if (is_array($configVal)) {
+                $html .= "<tr><td>Test Data</td><td><table>\n";
+                foreach ((array) $configVal as $paramName => $paramData) {
+                    $paramDval = $paramData['dval']; // default value
+                    $paramDesc = $paramData['desc']; // description
+                    $html .= "  <tr><td>KEY : <input type='text' name='paramKey' value='{$paramName}'/> VALUE : <input type='text' name='paramVal' style='width:300px' value='$paramDval'/> ({$paramDesc}) </td></tr>\n";
+                }
+                $html .= "</table></td></tr>\n";
+                // action attr
+            } else {
+                $html .= "<tr><td class='left'>{$configKey}</td><td>{$configVal}</td></tr>\n";
+            }
+        }
+        $html .= "<tr><td class='left'>Test Submit</td><td><input type='button' class='doTest' value='提交测试'/></td></tr>\n";
+        $html .= "<tr><td class='left'>Test Result</td><td><textarea id='result'></textarea></td></tr>\n";
+        $html .= "</table>\n";
+        echo $html;
+    }
+
     protected function getServerApiList() {
+        require_once __LIB . DIRECTORY_SEPARATOR . '/Document.php';
         $serverApiList = array();
         foreach(glob(__APP_PATH_SERVER . DIRECTORY_SEPARATOR . '*.php') as $classFile) {
             $className = basename($classFile,'.php');
             if($classFile && $className) {
                 $class = new ReflectionClass($className);
                 $methodList = $class->getMethods();
+                $doc = new Hush_Document($classFile);
                 foreach($methodList as $method) {
-                    if(preg_match('/Action$/',$method->name)) {
-                        $serverApiList[$className][$method->name] = $method->name;
+                    $config = $doc->getAnnotation($className, $method->name);
+                    if($config && preg_match('/Action$/',$method->name)) {
+                        $serverApiList[$className][$method->name] = $config;
                     }
                 }
             }
@@ -154,4 +208,5 @@ class DebugServer extends BaseServer{
     function __destruct() {
         $this->printFooter();
     }
+
 }

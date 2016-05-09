@@ -9,6 +9,7 @@
 require_once 'global.defines.php';
 require_once 'database.config.php';
 require_once 'global.datamap.php';
+//require_once 'global.session.php';
 
 define('__APP_NAME', 'Demos');
 define('__APP_VERSION', '1.0');

@@ -13,16 +13,22 @@ class IndexServer extends BaseServer {
     }
 
     function indexAction() {
-        echo 'Hello Index!!';
+//        echo 'Hello Index!!';
+        $this->doAuth();
+        //$this->customer 已经在doAuth()里面定义过，其实就是$_SESSION['customer']
+        $customer = $this->dao->getById($this->customer['id']);
+        $this->render('10000','Hello Index!',array(
+            'Customer' => $customer
+        ));
     }
 
     public function loginAction() {
-        if(!isset($_POST['name'])) {
-            $this->render('14001','Login Failed!请输入用户名','');
-        }
-        if(!isset($_POST['pass'])) {
-            $this->render('14001','Login Failed!请输入密码','');
-        }
+//        if(!isset($_POST['name'])) {
+//            $this->render('14001','Login Failed!请输入用户名','');
+//        }
+//        if(!isset($_POST['pass'])) {
+//            $this->render('14001','Login Failed!请输入密码','');
+//        }
         $name = isset($_POST['name']) ? $_POST['name'] : null;
         $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
 
@@ -30,14 +36,22 @@ class IndexServer extends BaseServer {
             $customer = $this->dao->doAuth($name,$pass);
             if($customer) {
                 $_SESSION['customer'] = $customer;
-                $this->render('10000','Login OK!',array('customer' => $customer));
+                $this->render('10000','Login OK!',array('Customer' => $customer));
             };
         }
 
         //render()方法如若执行，就会结束程序，所以下面是失败的输出
-        $this->render('14001','Login Failed!','');
+        $this->render('14001','Login Failed!');
     }
 
+    public function logoutAction() {
+        $_SESSION['customer'] = null;
+        $this->render('10000','Logout OK!');
+    }
+
+    /**
+     * @title 我要用反射解析这个title的注释怎么解
+     */
     public function testLoginAction() {
         $name = isset($_POST['name']) ? $_POST['name'] : null;
         $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
@@ -46,7 +60,7 @@ class IndexServer extends BaseServer {
             $customer = $this->dao->doAuth($name,$pass);
             if($customer) {
                 $_SESSION['customer'] = $customer;
-                $this->render('10000','Login OK!',array('customer' => $customer));
+                $this->render('10000','Login OK!',array('Customer' => $customer));
             };
         }
 
