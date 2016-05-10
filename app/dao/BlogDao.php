@@ -14,7 +14,7 @@ class BlogDao extends BaseModel {
 
     public function createBlog($customerid,$title,$content,$picture) {
         $sql = "insert into $this->tableName (customerid,title,content,picture)
-                    values ($customerid,$title,$content,$picture)";
+                    values ($customerid,'$title','$content','$picture')";
         return $this->dao->exec($sql);
     }
 
@@ -50,6 +50,7 @@ class BlogDao extends BaseModel {
      * 获取用户所有微博 （页数id指定）
      */
     public function getBlogsByCustomerId($customerId,$pageId = 0) {
+        $pageId = ((int)$pageId) * 10;
         $sql = "select * from $this->tableName where customerid = $customerId
                   order by uptime desc limit $pageId , 10";
         $blogs = $this->dao->getRows($sql);
@@ -78,6 +79,7 @@ class BlogDao extends BaseModel {
      * 获取所有微博
      */
     public function getBlogsByPage($pageId = 0) {
+        $pageId = ((int)$pageId) * 10;
         $sql = "select * from $this->tableName
                   order by uptime desc limit $pageId , 10";
         $blogs = $this->dao->getRows($sql);

@@ -7,13 +7,7 @@
  * Time: 22:20
  */
 class CustomerServer extends BaseServer {
-
-    private $dao;
-    public function __construct() {
-        $this->dao = new CustomerDao();
-        //$this->dao = ModelFactory::M('CustomerDao');
-    }
-
+    
     /*
     * @title 查看用户列表接口
     * @action ?server=customer&action=customerList
@@ -23,7 +17,8 @@ class CustomerServer extends BaseServer {
         //验证登录
         $this->doAuth();
 
-        $customerList = $this->dao->getListByPage();
+        $customerDao = ModelFactory::M('CustomerDao');
+        $customerList = $customerDao->getListByPage();
         $this->render('10000','Get customer list OK!',
             array('Customer.list' => $customerList));
     }
@@ -41,7 +36,8 @@ class CustomerServer extends BaseServer {
         if(!$customerId) {
             $this->render('10005','请求参数不存在');
         }
-        $customer = $this->dao->getById($customerId);
+        $customerDao = ModelFactory::M('CustomerDao');
+        $customer = $customerDao->getById($customerId);
         if($customer) {
             $this->render('10000','View customer OK!',array(
                'Customer' => $customer
@@ -65,7 +61,8 @@ class CustomerServer extends BaseServer {
         $value = isset($_POST['value']) ? $_POST['value'] : null;
 
         if($key) {
-            $result = $this->dao->updateInfo($this->customer['id'],$key,$value);
+            $customerDao = ModelFactory::M('CustomerDao');
+            $result = $customerDao->updateInfo($this->customer['id'],$key,$value);
             if($result) {
                 $this->render('10000', 'Update customer ok');
             } else {
@@ -90,7 +87,8 @@ class CustomerServer extends BaseServer {
         $face = isset($_POST['face']) ? $_POST['face'] : null;
 
         if($name && $pass && $sign && $face) {
-            $result = $this->dao->createCustomer($name,$pass,$sign,$face);
+            $customerDao = ModelFactory::M('CustomerDao');
+            $result = $customerDao->createCustomer($name,$pass,$sign,$face);
             if($result) {
                 $this->render('10000', 'Create customer ok');
             } else {
@@ -135,14 +133,16 @@ class CustomerServer extends BaseServer {
 
         $fansId = isset($_POST['fansId']) ? $_POST['fansId'] : null;
         if($fansId) {
-            $fansDao = new CustomerFansDao();
-            //$fansDao = ModelFactory::M('CustomerFansDao');
+            //$fansDao = new CustomerFansDao();
+            $fansDao = ModelFactory::M('CustomerFansDao');
             //如若粉丝关系不存在（在粉丝表中，本人的id：$this->customer['id'] 他是$fansId的粉丝）
             if(!$fansDao->exist($fansId,$this->customer['id'])) {
                 $fansDao->createFans($fansId,$this->customer['id']);
-                $this->dao->addFansCount($fansId);
 
-                $noticeDao = new NoticeDao();
+                $customerDao = ModelFactory::M('CustomerDao');
+                $customerDao->addFansCount($fansId);
+
+                $noticeDao = ModelFactory::M('noticeDao');
                 $noticeDao->addFansCount($fansId);
                 $this->render('10000','Add fans OK!');
             }
@@ -161,8 +161,8 @@ class CustomerServer extends BaseServer {
 
         $fansId = isset($_POST['fansId']) ? $_POST['fansId'] : null;
         if($fansId) {
-            $fansDao = new CustomerFansDao();
-            //$fansDao = ModelFactory::M('CustomerFansDao');
+            //$fansDao = new CustomerFansDao();
+            $fansDao = ModelFactory::M('CustomerFansDao');
             //如若粉丝关系不存在（在粉丝表中，本人的id：$this->customer['id'] 他是$fansId的粉丝）
             if(!$fansDao->exist($fansId,$this->customer['id'])) {
                 $this->render('10004','Delete fans failed!fans is not existed');

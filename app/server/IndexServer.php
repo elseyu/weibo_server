@@ -56,6 +56,11 @@ class IndexServer extends BaseServer {
         $this->render('14001','Login Failed!');
     }
 
+    /*
+    * @title 登出接口
+    * @action ?server=index&action=logout
+    * @method get
+    */
     public function logoutAction() {
         $_SESSION['customer'] = null;
         $this->render('10000','Logout OK!');

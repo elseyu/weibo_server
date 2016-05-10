@@ -51,8 +51,9 @@ class CustomerDao extends BaseModel{
     }
 
     public function getListByPage($pageId = 0) {
+        $pageId = ((int)$pageId) * 10;
         $sql = "select * from $this->tableName
-            ORDER  BY $this->tableName.uptime ";
+            ORDER  BY $this->tableName.uptime  limit $pageId,10";
         $customer = $this->dao->getRows($sql);
 //        var_dump($customer);
         return $customer;

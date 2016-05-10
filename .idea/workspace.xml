@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c776e6b3-dae8-4618-8953-92f807f0232b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/CustomerFansDao.php" afterPath="$PROJECT_DIR$/app/dao/CustomerFansDao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/NoticeDao.php" afterPath="$PROJECT_DIR$/app/dao/NoticeDao.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/server/BlogServer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/website/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/BlogDao.php" afterPath="$PROJECT_DIR$/app/dao/BlogDao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/CommentDao.php" afterPath="$PROJECT_DIR$/app/dao/CommentDao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/CustomerDao.php" afterPath="$PROJECT_DIR$/app/dao/CustomerDao.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/CustomerServer.php" afterPath="$PROJECT_DIR$/app/server/CustomerServer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server/IndexServer.php" afterPath="$PROJECT_DIR$/app/server/IndexServer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/app.config.php" afterPath="$PROJECT_DIR$/etc/app.config.php" />
     </list>
     <ignored path="weibo_new.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +32,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="global.defines.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etc/global.defines.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.088235">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CustomerServer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/server/CustomerServer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2859477">
-              <caret line="165" column="17" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.36764705">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseServer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/BaseServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.088235">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -39,7 +65,7 @@
       <file leaf-file-name="CustomerFansDao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/CustomerFansDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
+            <state vertical-scroll-proportion="-36.764706">
               <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
               <folding>
                 <marker date="1462884090728" expanded="true" signature="440:454" placeholder="select * fro... ${$this}" />
@@ -65,22 +91,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.datamap.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/etc/global.datamap.php">
+      <file leaf-file-name="CustomerDao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/dao/CustomerDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.205883">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/etc/app.config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.147059">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
+            <state vertical-scroll-proportion="-13.117647">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
+              <folding>
+                <element signature="e#7#94#0#PHP" expanded="true" />
+                <marker date="1462890387714" expanded="true" signature="351:364" placeholder="select * fro... " />
+                <marker date="1462890387714" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="794:807" placeholder="select * fro... " />
+                <marker date="1462890387714" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
+                <marker date="1462890387714" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
+                <marker date="1462890387714" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
+                <marker date="1462890387714" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
+                <marker date="1462890387714" expanded="true" signature="1617:1693" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="1617:1700" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="1617:1701" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="1617:1711" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890387714" expanded="true" signature="1891:1946" placeholder="UPDATE ${$th... " />
+                <marker date="1462890387714" expanded="true" signature="2106:2209" placeholder="INSERT INTO customer... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,8 +135,8 @@
       <file leaf-file-name="NoticeDao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/NoticeDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.882353">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="46" />
+            <state vertical-scroll-proportion="38.617645">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
                 <element signature="e#7#95#0#PHP" expanded="true" />
                 <marker date="1462882610099" expanded="true" signature="454:468" placeholder="select * fro... ${$this}" />
@@ -115,60 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogDao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dao/BlogDao.php">
+      <file leaf-file-name="BlogServer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server/BlogServer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.294118">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding>
-                <marker date="1462879518107" expanded="true" signature="386:398" placeholder="insert into ${$this}... " />
-                <marker date="1462879518107" expanded="true" signature="386:399" placeholder="insert into $... " />
-                <marker date="1462879518107" expanded="true" signature="386:449" placeholder="insert into ${$this-&gt;tableName}... " />
-                <marker date="1462879518107" expanded="true" signature="386:515" placeholder="insert into ${$this-&gt;tableName}... " />
-                <marker date="1462879518107" expanded="true" signature="860:903" placeholder="update ${$th... " />
-                <marker date="1462879518107" expanded="true" signature="860:904" placeholder="update ${$th... " />
-                <marker date="1462879518107" expanded="true" signature="860:925" placeholder="update ${$th... " />
-                <marker date="1462879518107" expanded="true" signature="860:926" placeholder="update ${$th... " />
-                <marker date="1462879518107" expanded="true" signature="1110:1166" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462879518107" expanded="true" signature="1444:1494" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462879518107" expanded="true" signature="1444:1551" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462879518107" expanded="true" signature="1444:1552" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462879518107" expanded="true" signature="1444:1563" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462879518107" expanded="true" signature="2400:2488" placeholder="select * fro... ${$this-&gt;tableName}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentDao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.911765">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding>
-                <marker date="1462880147794" expanded="true" signature="387:399" placeholder="insert into ${$this}... " />
-                <marker date="1462880147794" expanded="true" signature="387:400" placeholder="insert into $... " />
-                <marker date="1462880147794" expanded="true" signature="387:406" placeholder="insert into ${$this}... " />
-                <marker date="1462880147794" expanded="true" signature="387:443" placeholder="insert into ${$this-&gt;tableName}... " />
-                <marker date="1462880147794" expanded="true" signature="387:500" placeholder="insert into ${$this-&gt;tableName}... " />
-                <marker date="1462880147794" expanded="true" signature="664:678" placeholder="select * fro... ${$this}" />
-                <marker date="1462880147794" expanded="true" signature="664:679" placeholder="select * fro... $" />
-                <marker date="1462880147794" expanded="true" signature="664:728" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462880147794" expanded="true" signature="664:729" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462880147794" expanded="true" signature="664:758" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462880147794" expanded="true" signature="664:759" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462880147794" expanded="true" signature="664:768" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462880147794" expanded="true" signature="1466:1578" placeholder="select * fro... ${$this-&gt;tableName}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.message.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/etc/global.message.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4705882">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            <state vertical-scroll-proportion="-6.970588">
+              <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -177,46 +175,57 @@
       <file leaf-file-name="IndexServer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/server/IndexServer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.088235">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state vertical-scroll-proportion="-38.97059">
+              <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerDao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dao/CustomerDao.php">
+      <file leaf-file-name="BlogDao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/dao/BlogDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.558824">
-              <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+            <state vertical-scroll-proportion="-21.67647">
+              <caret line="81" column="38" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
               <folding>
-                <element signature="e#7#94#0#PHP" expanded="true" />
-                <marker date="1462875801265" expanded="true" signature="351:364" placeholder="select * fro... " />
-                <marker date="1462875801265" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462875801265" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462875801265" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462875801265" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462875801265" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="794:807" placeholder="select * fro... " />
-                <marker date="1462875801265" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
-                <marker date="1462875801265" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
-                <marker date="1462875801265" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
-                <marker date="1462875801265" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
-                <marker date="1462875801265" expanded="true" signature="1578:1654" placeholder="select * fro... ${$this-&gt;tableName}" />
-                <marker date="1462875801265" expanded="true" signature="1835:1890" placeholder="UPDATE ${$th... " />
-                <marker date="1462875801265" expanded="true" signature="2050:2153" placeholder="INSERT INTO customer... " />
+                <marker date="1462890325773" expanded="true" signature="386:398" placeholder="insert into ${$this}... " />
+                <marker date="1462890325773" expanded="true" signature="386:399" placeholder="insert into $... " />
+                <marker date="1462890325773" expanded="true" signature="386:449" placeholder="insert into ${$this-&gt;tableName}... " />
+                <marker date="1462890325773" expanded="true" signature="386:521" placeholder="insert into ${$this-&gt;tableName}... " />
+                <marker date="1462890325773" expanded="true" signature="866:909" placeholder="update ${$th... " />
+                <marker date="1462890325773" expanded="true" signature="866:910" placeholder="update ${$th... " />
+                <marker date="1462890325773" expanded="true" signature="866:931" placeholder="update ${$th... " />
+                <marker date="1462890325773" expanded="true" signature="866:932" placeholder="update ${$th... " />
+                <marker date="1462890325773" expanded="true" signature="1116:1172" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890325773" expanded="true" signature="1489:1539" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890325773" expanded="true" signature="1489:1596" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890325773" expanded="true" signature="1489:1597" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890325773" expanded="true" signature="1489:1608" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890325773" expanded="true" signature="2484:2572" placeholder="select * fro... ${$this-&gt;tableName}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentDao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-36.764706">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+              <folding>
+                <marker date="1462890372963" expanded="true" signature="387:399" placeholder="insert into ${$this}... " />
+                <marker date="1462890372963" expanded="true" signature="387:400" placeholder="insert into $... " />
+                <marker date="1462890372963" expanded="true" signature="387:406" placeholder="insert into ${$this}... " />
+                <marker date="1462890372963" expanded="true" signature="387:443" placeholder="insert into ${$this-&gt;tableName}... " />
+                <marker date="1462890372963" expanded="true" signature="387:500" placeholder="insert into ${$this-&gt;tableName}... " />
+                <marker date="1462890372963" expanded="true" signature="703:717" placeholder="select * fro... ${$this}" />
+                <marker date="1462890372963" expanded="true" signature="703:718" placeholder="select * fro... $" />
+                <marker date="1462890372963" expanded="true" signature="703:767" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890372963" expanded="true" signature="703:768" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890372963" expanded="true" signature="703:797" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890372963" expanded="true" signature="703:798" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890372963" expanded="true" signature="703:807" placeholder="select * fro... ${$this-&gt;tableName}" />
+                <marker date="1462890372963" expanded="true" signature="1544:1656" placeholder="select * fro... ${$this-&gt;tableName}" />
               </folding>
             </state>
           </provider>
@@ -262,15 +271,17 @@
         <option value="$PROJECT_DIR$/lib/Document/Parser.php" />
         <option value="$PROJECT_DIR$/app/server/DebugServer.php" />
         <option value="$PROJECT_DIR$/app/tpl/test_login.tpl" />
-        <option value="$PROJECT_DIR$/app/server/IndexServer.php" />
         <option value="$PROJECT_DIR$/etc/global.datamap.php" />
         <option value="$PROJECT_DIR$/etc/global.message.php" />
-        <option value="$PROJECT_DIR$/etc/app.config.php" />
-        <option value="$PROJECT_DIR$/app/dao/CustomerDao.php" />
-        <option value="$PROJECT_DIR$/app/dao/BlogDao.php" />
-        <option value="$PROJECT_DIR$/app/dao/CommentDao.php" />
         <option value="$PROJECT_DIR$/app/dao/NoticeDao.php" />
         <option value="$PROJECT_DIR$/app/dao/CustomerFansDao.php" />
+        <option value="$PROJECT_DIR$/etc/app.config.php" />
+        <option value="$PROJECT_DIR$/www/website/index.html" />
+        <option value="$PROJECT_DIR$/app/dao/BlogDao.php" />
+        <option value="$PROJECT_DIR$/app/dao/CommentDao.php" />
+        <option value="$PROJECT_DIR$/app/dao/CustomerDao.php" />
+        <option value="$PROJECT_DIR$/app/server/IndexServer.php" />
+        <option value="$PROJECT_DIR$/app/server/BlogServer.php" />
         <option value="$PROJECT_DIR$/app/server/CustomerServer.php" />
       </list>
     </option>
@@ -344,6 +355,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,32 +655,35 @@
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
           <folding>
             <element signature="e#7#94#0#PHP" expanded="true" />
-            <marker date="1462875801265" expanded="true" signature="351:364" placeholder="select * fro... " />
-            <marker date="1462875801265" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:807" placeholder="select * fro... " />
-            <marker date="1462875801265" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
-            <marker date="1462875801265" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="1578:1654" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="1835:1890" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="2050:2153" placeholder="INSERT INTO customer... " />
+            <marker date="1462890387714" expanded="true" signature="351:364" placeholder="select * fro... " />
+            <marker date="1462890387714" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:807" placeholder="select * fro... " />
+            <marker date="1462890387714" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
+            <marker date="1462890387714" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="1617:1693" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1700" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1701" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1711" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1891:1946" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="2106:2209" placeholder="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -823,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/BaseServer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.911764">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/SessionUtil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.764706">
@@ -865,14 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="54" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etc/global.defines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7352941">
-          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -931,103 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/server/IndexServer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.088235">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etc/app.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.147059">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/BlogDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.294118">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <marker date="1462879518107" expanded="true" signature="386:398" placeholder="insert into ${$this}... " />
-            <marker date="1462879518107" expanded="true" signature="386:399" placeholder="insert into $... " />
-            <marker date="1462879518107" expanded="true" signature="386:449" placeholder="insert into ${$this-&gt;tableName}... " />
-            <marker date="1462879518107" expanded="true" signature="386:515" placeholder="insert into ${$this-&gt;tableName}... " />
-            <marker date="1462879518107" expanded="true" signature="860:903" placeholder="update ${$th... " />
-            <marker date="1462879518107" expanded="true" signature="860:904" placeholder="update ${$th... " />
-            <marker date="1462879518107" expanded="true" signature="860:925" placeholder="update ${$th... " />
-            <marker date="1462879518107" expanded="true" signature="860:926" placeholder="update ${$th... " />
-            <marker date="1462879518107" expanded="true" signature="1110:1166" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462879518107" expanded="true" signature="1444:1494" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462879518107" expanded="true" signature="1444:1551" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462879518107" expanded="true" signature="1444:1552" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462879518107" expanded="true" signature="1444:1563" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462879518107" expanded="true" signature="2400:2488" placeholder="select * fro... ${$this-&gt;tableName}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.911765">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <marker date="1462880147794" expanded="true" signature="387:399" placeholder="insert into ${$this}... " />
-            <marker date="1462880147794" expanded="true" signature="387:400" placeholder="insert into $... " />
-            <marker date="1462880147794" expanded="true" signature="387:406" placeholder="insert into ${$this}... " />
-            <marker date="1462880147794" expanded="true" signature="387:443" placeholder="insert into ${$this-&gt;tableName}... " />
-            <marker date="1462880147794" expanded="true" signature="387:500" placeholder="insert into ${$this-&gt;tableName}... " />
-            <marker date="1462880147794" expanded="true" signature="664:678" placeholder="select * fro... ${$this}" />
-            <marker date="1462880147794" expanded="true" signature="664:679" placeholder="select * fro... $" />
-            <marker date="1462880147794" expanded="true" signature="664:728" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462880147794" expanded="true" signature="664:729" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462880147794" expanded="true" signature="664:758" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462880147794" expanded="true" signature="664:759" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462880147794" expanded="true" signature="664:768" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462880147794" expanded="true" signature="1466:1578" placeholder="select * fro... ${$this-&gt;tableName}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/CustomerDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.558824">
-          <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
-          <folding>
-            <element signature="e#7#94#0#PHP" expanded="true" />
-            <marker date="1462875801265" expanded="true" signature="351:364" placeholder="select * fro... " />
-            <marker date="1462875801265" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:807" placeholder="select * fro... " />
-            <marker date="1462875801265" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
-            <marker date="1462875801265" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
-            <marker date="1462875801265" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="1578:1654" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462875801265" expanded="true" signature="1835:1890" placeholder="UPDATE ${$th... " />
-            <marker date="1462875801265" expanded="true" signature="2050:2153" placeholder="INSERT INTO customer... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/etc/global.message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4705882">
@@ -1044,37 +949,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/NoticeDao.php">
+    <entry file="file://$PROJECT_DIR$/framework/BaseServer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.882353">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="e#7#95#0#PHP" expanded="true" />
-            <marker date="1462882610099" expanded="true" signature="454:468" placeholder="select * fro... ${$this}" />
-            <marker date="1462882610099" expanded="true" signature="454:469" placeholder="select * fro... $" />
-            <marker date="1462882610099" expanded="true" signature="454:517" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="454:532" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="649:683" placeholder="update ${$th... " />
-            <marker date="1462882610099" expanded="true" signature="649:687" placeholder="update ${$th... " />
-            <marker date="1462882610099" expanded="true" signature="649:699" placeholder="update ${$th... " />
-            <marker date="1462882610099" expanded="true" signature="649:700" placeholder="update ${$th... " />
-            <marker date="1462882610099" expanded="true" signature="838:916" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="1135:1197" placeholder="update ${$th... " />
-            <marker date="1462882610099" expanded="true" signature="1500:1514" placeholder="select * fro... ${$this}" />
-            <marker date="1462882610099" expanded="true" signature="1500:1515" placeholder="select * fro... $" />
-            <marker date="1462882610099" expanded="true" signature="1500:1550" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="1500:1551" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="1500:1576" placeholder="select * fro... ${$this-&gt;tableName}" />
-            <marker date="1462882610099" expanded="true" signature="2104:2116" placeholder="insert into ${$this}... " />
-            <marker date="1462882610099" expanded="true" signature="2104:2117" placeholder="insert into $... " />
-            <marker date="1462882610099" expanded="true" signature="2104:2227" placeholder="insert into ${$this-&gt;tableName}... " />
-          </folding>
+        <state vertical-scroll-proportion="-8.088235">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/global.defines.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.088235">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/website/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2859477">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/app.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71405226">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dao/CustomerFansDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
+        <state vertical-scroll-proportion="-36.764706">
           <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
           <folding>
             <marker date="1462884090728" expanded="true" signature="440:454" placeholder="select * fro... ${$this}" />
@@ -1099,10 +1008,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/BlogDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.67647">
+          <caret line="81" column="38" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+          <folding>
+            <marker date="1462890325773" expanded="true" signature="386:398" placeholder="insert into ${$this}... " />
+            <marker date="1462890325773" expanded="true" signature="386:399" placeholder="insert into $... " />
+            <marker date="1462890325773" expanded="true" signature="386:449" placeholder="insert into ${$this-&gt;tableName}... " />
+            <marker date="1462890325773" expanded="true" signature="386:521" placeholder="insert into ${$this-&gt;tableName}... " />
+            <marker date="1462890325773" expanded="true" signature="866:909" placeholder="update ${$th... " />
+            <marker date="1462890325773" expanded="true" signature="866:910" placeholder="update ${$th... " />
+            <marker date="1462890325773" expanded="true" signature="866:931" placeholder="update ${$th... " />
+            <marker date="1462890325773" expanded="true" signature="866:932" placeholder="update ${$th... " />
+            <marker date="1462890325773" expanded="true" signature="1116:1172" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890325773" expanded="true" signature="1489:1539" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890325773" expanded="true" signature="1489:1596" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890325773" expanded="true" signature="1489:1597" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890325773" expanded="true" signature="1489:1608" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890325773" expanded="true" signature="2484:2572" placeholder="select * fro... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.764706">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding>
+            <marker date="1462890372963" expanded="true" signature="387:399" placeholder="insert into ${$this}... " />
+            <marker date="1462890372963" expanded="true" signature="387:400" placeholder="insert into $... " />
+            <marker date="1462890372963" expanded="true" signature="387:406" placeholder="insert into ${$this}... " />
+            <marker date="1462890372963" expanded="true" signature="387:443" placeholder="insert into ${$this-&gt;tableName}... " />
+            <marker date="1462890372963" expanded="true" signature="387:500" placeholder="insert into ${$this-&gt;tableName}... " />
+            <marker date="1462890372963" expanded="true" signature="703:717" placeholder="select * fro... ${$this}" />
+            <marker date="1462890372963" expanded="true" signature="703:718" placeholder="select * fro... $" />
+            <marker date="1462890372963" expanded="true" signature="703:767" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890372963" expanded="true" signature="703:768" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890372963" expanded="true" signature="703:797" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890372963" expanded="true" signature="703:798" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890372963" expanded="true" signature="703:807" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890372963" expanded="true" signature="1544:1656" placeholder="select * fro... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/NoticeDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="38.617645">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="e#7#95#0#PHP" expanded="true" />
+            <marker date="1462882610099" expanded="true" signature="454:468" placeholder="select * fro... ${$this}" />
+            <marker date="1462882610099" expanded="true" signature="454:469" placeholder="select * fro... $" />
+            <marker date="1462882610099" expanded="true" signature="454:517" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="454:532" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="649:683" placeholder="update ${$th... " />
+            <marker date="1462882610099" expanded="true" signature="649:687" placeholder="update ${$th... " />
+            <marker date="1462882610099" expanded="true" signature="649:699" placeholder="update ${$th... " />
+            <marker date="1462882610099" expanded="true" signature="649:700" placeholder="update ${$th... " />
+            <marker date="1462882610099" expanded="true" signature="838:916" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="1135:1197" placeholder="update ${$th... " />
+            <marker date="1462882610099" expanded="true" signature="1500:1514" placeholder="select * fro... ${$this}" />
+            <marker date="1462882610099" expanded="true" signature="1500:1515" placeholder="select * fro... $" />
+            <marker date="1462882610099" expanded="true" signature="1500:1550" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="1500:1551" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="1500:1576" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462882610099" expanded="true" signature="2104:2116" placeholder="insert into ${$this}... " />
+            <marker date="1462882610099" expanded="true" signature="2104:2117" placeholder="insert into $... " />
+            <marker date="1462882610099" expanded="true" signature="2104:2227" placeholder="insert into ${$this-&gt;tableName}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/BlogServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.970588">
+          <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/server/IndexServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-38.97059">
+          <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/CustomerDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.117647">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
+          <folding>
+            <element signature="e#7#94#0#PHP" expanded="true" />
+            <marker date="1462890387714" expanded="true" signature="351:364" placeholder="select * fro... " />
+            <marker date="1462890387714" expanded="true" signature="351:365" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:400" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:401" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:425" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:426" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:427" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:432" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:449" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:473" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:474" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:475" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="351:480" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="351:481" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:807" placeholder="select * fro... " />
+            <marker date="1462890387714" expanded="true" signature="794:808" placeholder="select * fro... ${$customer =}" />
+            <marker date="1462890387714" expanded="true" signature="794:842" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:843" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:861" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:879" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="794:880" placeholder="select * fro... ${self::TABLE_NAME}" />
+            <marker date="1462890387714" expanded="true" signature="1152:1220" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="1366:1434" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="1617:1693" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1700" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1701" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1617:1711" placeholder="select * fro... ${$this-&gt;tableName}" />
+            <marker date="1462890387714" expanded="true" signature="1891:1946" placeholder="UPDATE ${$th... " />
+            <marker date="1462890387714" expanded="true" signature="2106:2209" placeholder="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/server/CustomerServer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2859477">
-          <caret line="165" column="17" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.36764705">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>

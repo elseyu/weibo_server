@@ -22,6 +22,7 @@ class CommentDao extends BaseModel {
      * 通过微博的id获取评论信息
      */
     public function getCommentsByBlogId($blogId,$pageId = 0) {
+        $pageId = ((int)$pageId) * 10;
         $sql = "select * from $this->tableName
                   where blogid = $blogId order by uptime limit $pageId,10";
         $result = $this->dao->getRows($sql);
@@ -47,6 +48,7 @@ class CommentDao extends BaseModel {
      * 通过用户的id获取评论信息
      */
     public function getByCustomerId($customerId, $pageId = 0) {
+        $pageId = ((int)$pageId) * 10;
         $sql = "select * from $this->tableName
                   where customerid = $customerId order by uptime limit $pageId,10";
         return $this->dao->getRows($sql);

@@ -32,5 +32,11 @@ define('__ACTION', 'action');
 define('__SERVER_URL','http://api.demos.app.com:8001/');
 define('__WEBSITE_URL','http://demos.app.com:8002/');
 
+/**
+ * 图片的物理路径的URL
+ */
+define('__PICTURE_DIR', realpath(__WWW . '/website/picture'));
+define('__PICTURE_URL', __WEBSITE_URL . '/picture/');
+
 
 
