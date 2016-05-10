@@ -6,8 +6,8 @@
  * Date: 2016/5/8
  * Time: 22:29
  */
-require_once '../../etc/app.config.php';
-require_once __FRAMEWORK . '/BaseModel.php';
+//require_once '../../etc/app.config.php';
+//require_once __FRAMEWORK . '/BaseModel.php';
 
 class CustomerDao extends BaseModel{
     private $tableName = 'customer';
@@ -73,7 +73,10 @@ class CustomerDao extends BaseModel{
 }
 
 //$test = new CustomerDao();
+//$test->getById(1);
 //$test->addFansCount(1);
 //$test->doAuth('test','test');
 //$test->getListByPage();
+//$test->addBlogCount(1);
+//$test->createCustomer('1','1','1','1');
 //$test->updateInfo(1,'sign','我更新啦！！！');

@@ -14,9 +14,11 @@ class CustomerServer extends BaseServer {
         //$this->dao = ModelFactory::M('CustomerDao');
     }
 
-    /**
-     * 查看用户列表的接口，请求方法是get
-     */
+    /*
+    * @title 查看用户列表接口
+    * @action ?server=customer&action=customerList
+    * @method get
+    */
     public function customerListAction() {
         //验证登录
         $this->doAuth();
@@ -26,29 +28,36 @@ class CustomerServer extends BaseServer {
             array('Customer.list' => $customerList));
     }
 
-    /**
-     * 查看其他用户信息的接口，用post请求,请求参数是：customerId
-     */
+    /*
+    * @title 查看用户接口
+    * @action ?server=customer&action=customerView
+    * @params customerId '' INT
+    * @method post
+    */
     public function customerViewAction() {
         $this->doAuth();
 
         $customerId = isset($_POST['customerId']) ? $_POST['customerId'] : null;
         if(!$customerId) {
-            $this->render('10004','请求参数不存在');
+            $this->render('10005','请求参数不存在');
         }
         $customer = $this->dao->getById($customerId);
-        if(!$customer) {
+        if($customer) {
             $this->render('10000','View customer OK!',array(
                'Customer' => $customer
             ));
         } else {
-            $this->render('10004','查看用户信息失败');
+            $this->render('10004','View customer failed!');
         }
     }
 
-    /**
-     * 更新用户信息接口,请求post
-     */
+    /*
+    * @title 更新用户接口
+    * @action ?server=customer&action=customerEdit
+    * @params key '' STRING
+    * @params value '' STRING
+    * @method post
+    */
     public function customerEditAction() {
         $this->doAuth();
 
@@ -95,29 +104,40 @@ class CustomerServer extends BaseServer {
      * 新建用户接口,请求post
      * 测试接口
      */
-    public function testCustomerCreateAction() {
-        $name = isset($_POST['name']) ? $_POST['name'] : null;
-        $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
-        $sign = isset($_POST['sign']) ? $_POST['sign'] : null;
-        $face = isset($_POST['face']) ? $_POST['face'] : null;
-
-        if($name && $pass && $sign && $face) {
-            $result = $this->dao->createCustomer($name,$pass,$sign,$face);
-            if($result) {
-                $this->render('10000', 'Create customer ok');
-            } else {
-                $this->render('10004', 'Create customer failed');
-            }
-        }
-
-        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'debug_header.tpl';
-        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'test_createcustomer.tpl';
-        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'debug_footer.tpl';
-    }
+//    public function testCustomerCreateAction() {
+//        $name = isset($_POST['name']) ? $_POST['name'] : null;
+//        $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
+//        $sign = isset($_POST['sign']) ? $_POST['sign'] : null;
+//        $face = isset($_POST['face']) ? $_POST['face'] : null;
+//
+//        if($name && $pass && $sign && $face) {
+//            $result = $this->dao->createCustomer($name,$pass,$sign,$face);
+//            if($result) {
+//                $this->render('10000', 'Create customer ok');
+//            } else {
+//                $this->render('10004', 'Create customer failed');
+//            }
+//        }
+//
+//        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'debug_header.tpl';
+//        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'test_createcustomer.tpl';
+//        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'debug_footer.tpl';
+//    }
 
     public function addFansAction() {
         $this->doAuth();
 
+        $fansId = isset($_POST['fansId']) ? $_POST['fansId'] : null;
+        if($fansId) {
+            $fansDao = new CustomerFansDao();
+            //$fansDao = ModelFactory::M('CustomerFansDao');
+            //如若粉丝关系不存在
+            if(!$fansDao->exist($this->customer['id'],$fansId)) {
+                $fansDao->createFans($this->customer['id'],$fansId);
+            }
+
+            $this->dao->addFansCount($this->customer['id']);
+        }
 
     }
 

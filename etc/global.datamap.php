@@ -17,6 +17,29 @@ $dataMaps = array(
         'fanscount' => 'fansCount',
         'uptime' => 'upTime'
     ),
+    'Blog' => array(
+        'id' => 'id',
+        'face' => 'face',
+        'author' => 'author',
+        'content' => 'content',
+        'picture' => 'picture',
+        'comment' => 'comment',
+        'uptime' => 'uptime',
+    ),
+    'Comment' => array(
+        'id' => 'id',
+        'content' => 'content',
+        'uptime' => 'uptime',
+    ),
+    'Image' => array(
+        'id' => 'id',
+        'url' => 'url',
+        'type' => 'type',
+    ),
+    'Notice' => array(
+        'id' => 'id',
+        'message' => 'message'
+    ),
 );
 
 function M($model,$data) {

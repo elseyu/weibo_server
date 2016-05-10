@@ -12,6 +12,11 @@ class IndexServer extends BaseServer {
         $this->dao = new CustomerDao();
     }
 
+    /*
+    * @title 主页接口
+    * @action ?server=index&action=index
+    * @method get
+    */
     function indexAction() {
 //        echo 'Hello Index!!';
         $this->doAuth();
@@ -22,6 +27,13 @@ class IndexServer extends BaseServer {
         ));
     }
 
+    /*
+    * @title 登录接口
+    * @action ?server=index&action=login
+    * @params name test STRING
+    * @params pass test STRING
+    * @method post
+    */
     public function loginAction() {
 //        if(!isset($_POST['name'])) {
 //            $this->render('14001','Login Failed!请输入用户名','');
@@ -49,9 +61,13 @@ class IndexServer extends BaseServer {
         $this->render('10000','Logout OK!');
     }
 
-    /**
-     * @title 我要用反射解析这个title的注释怎么解
-     */
+    /*
+    * @title 测试登录接口
+    * @action ?server=index&action=testLogin
+    * @params name test STRING
+    * @params pass test STRING
+    * @method post
+    */
     public function testLoginAction() {
         $name = isset($_POST['name']) ? $_POST['name'] : null;
         $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
