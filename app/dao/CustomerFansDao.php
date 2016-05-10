@@ -6,6 +6,8 @@
  * Date: 2016/5/10
  * Time: 13:12
  */
+require_once '../../etc/app.config.php';
+require_once __FRAMEWORK . '/BaseModel.php';
 class CustomerFansDao extends BaseModel{
     private $tableName = 'customer_fans'; //表名
     private $tablePrim = ''; //表的主键 这里为空，因为一组数据由customerid 、fansid决定
@@ -17,15 +19,6 @@ class CustomerFansDao extends BaseModel{
         $sql = "select * from $this->tableName
                   where customerid = $customerId and fansid = $fansId";
         return $this->dao->getOneRow($sql);
-    }
-
-    /*
-     * 删除粉丝关系
-     */
-    public function delete($customerId, $fansId) {
-        $sql = "delete from $this->tableName
-                  where customerid = $customerId and fansid = $fansId";
-        return $this->dao->exec($sql);
     }
 
     /*
@@ -50,6 +43,19 @@ class CustomerFansDao extends BaseModel{
     public function createFans($customerId, $fansId) {
         $sql = "INSERT INTO $this->tableName (customerid, fansid) VALUES ($customerId, $fansId);";
         return $this->dao->exec($sql);
+    }
 
+    /*
+     * 删除粉丝关系
+     */
+    public function delFans($customerId, $fansId) {
+        $sql = "delete from $this->tableName
+                    where customerid = $customerId and fansid = $fansId";
+        //echo $sql;
+        $result = $this->dao->exec($sql);
+        return $result;
     }
 }
+
+//$test = new CustomerFansDao();
+//$test->delFans(1,1);

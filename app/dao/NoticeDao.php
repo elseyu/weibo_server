@@ -31,12 +31,13 @@ class NoticeDao extends BaseModel {
         $sql = "select * from $this->tableName where customerid = '$customerId' and status = 0";
 
         $row = $this->dao->getOneRow($sql);
+        //如果已经存在未读的新增粉丝的通知，则把该通知的新增粉丝数增加
         if($row) {
             $id = $row['id'];
             $fansCount = (int)$row['fanscount'] + $addCount;
             $sql = "update $this->tableName set fanscount = $fansCount where id = $id";
             $this->dao->exec($sql);
-        } else {
+        } else { //如果不存在该通知，则创建新的通知
             $this->createNotice($customerId,1);
         }
     }
@@ -51,14 +52,14 @@ class NoticeDao extends BaseModel {
         $row = $this->dao->getOneRow($sql);
         $message = trim($row['massage']);
         if(strlen($message) > 0) {
-            var_dump($row);
+//            var_dump($row);
             return $row;
         }
 
         $fans = (int)$row['fanscount'];
         if($fans > 0) {
             $row['message'] = L('cn','notice',$row['fanscount']);
-            var_dump($row);
+//            var_dump($row);
             return $row;
         }
 
@@ -76,5 +77,5 @@ class NoticeDao extends BaseModel {
 
 }
 
-$test = new NoticeDao();
-$test->getByCustomerId(2);
+//$test = new NoticeDao();
+//$test->getByCustomerId(2);

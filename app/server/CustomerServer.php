@@ -80,7 +80,7 @@ class CustomerServer extends BaseServer {
     * @params name '' STRING
     * @params pass '' STRING
     * @params sign '' STRING
-    * @params face '0' STRING
+    * @params face 0 STRING
     * @method post
     */
     public function customerCreateAction() {
@@ -124,6 +124,12 @@ class CustomerServer extends BaseServer {
 //        include __APP_PATH_TPL . DIRECTORY_SEPARATOR . 'debug_footer.tpl';
 //    }
 
+    /*
+    * @title 增加粉丝接口(关注别人成为别人的粉丝)
+    * @action ?server=customer&action=addFans
+    * @params fansId '' STRING
+    * @method post
+    */
     public function addFansAction() {
         $this->doAuth();
 
@@ -131,18 +137,44 @@ class CustomerServer extends BaseServer {
         if($fansId) {
             $fansDao = new CustomerFansDao();
             //$fansDao = ModelFactory::M('CustomerFansDao');
-            //如若粉丝关系不存在
-            if(!$fansDao->exist($this->customer['id'],$fansId)) {
-                $fansDao->createFans($this->customer['id'],$fansId);
+            //如若粉丝关系不存在（在粉丝表中，本人的id：$this->customer['id'] 他是$fansId的粉丝）
+            if(!$fansDao->exist($fansId,$this->customer['id'])) {
+                $fansDao->createFans($fansId,$this->customer['id']);
+                $this->dao->addFansCount($fansId);
+
+                $noticeDao = new NoticeDao();
+                $noticeDao->addFansCount($fansId);
+                $this->render('10000','Add fans OK!');
             }
-
-            $this->dao->addFansCount($this->customer['id']);
         }
-
+        $this->render('10004','Add fans failed,fans is existed');
     }
 
-    public function testAction() {
-        $customer = $this->dao->getById(1);
-//        var_dump($customer);
+    /*
+    * @title 删除粉丝接口(取消关注)
+    * @action ?server=customer&action=delFans
+    * @params fansId '' STRING
+    * @method post
+    */
+    public function delFansAction() {
+        $this->doAuth();
+
+        $fansId = isset($_POST['fansId']) ? $_POST['fansId'] : null;
+        if($fansId) {
+            $fansDao = new CustomerFansDao();
+            //$fansDao = ModelFactory::M('CustomerFansDao');
+            //如若粉丝关系不存在（在粉丝表中，本人的id：$this->customer['id'] 他是$fansId的粉丝）
+            if(!$fansDao->exist($fansId,$this->customer['id'])) {
+                $this->render('10004','Delete fans failed!fans is not existed');
+            }
+            if($fansDao->delFans($fansId,$this->customer['id']))
+                $this->render('10000','Delete fans OK!');
+        }
+        $this->render('10004','Delete fans failed,fansId is empty');
     }
+
+//    public function testAction() {
+//        $customer = $this->dao->getById(1);
+////        var_dump($customer);
+//    }
 }
