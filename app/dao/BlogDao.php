@@ -101,4 +101,9 @@ class BlogDao extends BaseModel {
 
         return $blogList;
     }
+
+    public function exist($blogId) {
+        $sql = "select 1 from $this->tableName where id = $blogId";
+        return $this->dao->getOneRow($sql);
+    }
 }

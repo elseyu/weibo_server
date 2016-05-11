@@ -8,11 +8,6 @@
  */
 class BlogServer extends BaseServer {
 
-    private $dao;
-    public function __construct() {
-        $this->dao = new BlogDao();
-        //$this->dao = ModelFactory::M('CustomerDao');
-    }
     /**
      * @title 微博列表接口
      * @action ?server=blog&action=blogList
@@ -26,12 +21,13 @@ class BlogServer extends BaseServer {
         $typeId = $_GET['typeId'];
         $pageId = $_GET['pageId'];
         $blogList = array();
+        $blogDao = ModelFactory::M('BlogDao');
         switch($typeId) {
             case 0:
-                $blogList = $this->dao->getBlogsByPage($pageId);
+                $blogList = $blogDao->getBlogsByPage($pageId);
                 break;
             case 1:
-                $blogList = $this->dao->getBlogsByCustomerId($this->customer['id']);
+                $blogList = $blogDao->getBlogsByCustomerId($this->customer['id']);
                 break;
             case 2:
                 break;    //暂时没有实现
@@ -61,9 +57,10 @@ class BlogServer extends BaseServer {
 
         $blogId = $_POST['blogId'];
         if($blogId) {
-            $blog = $this->dao->getBlogById($blogId);
+            $blogDao = ModelFactory::M('BlogDao');
+            $blog = $blogDao->getBlogById($blogId);
             if($blog) {
-                $customerDao = new CustomerDao();
+                $customerDao = ModelFactory::M('CustomerDao');
                 $customer = $customerDao->getById($blog['customerid']);
                 $this->render('10000','Get blog OK!',array(
                     'Customer' => $customer,
@@ -119,9 +116,10 @@ class BlogServer extends BaseServer {
             }
 
             //创建微博的逻辑
-            $this->dao->createBlog($this->customer['id'],'',$content,$uploadFileUrl);
+            $blogDao = ModelFactory::M('BlogDao');
+            $blogDao->createBlog($this->customer['id'],'',$content,$uploadFileUrl);
             //增加微博数目
-            $customerDao = new CustomerDao();
+            $customerDao = ModelFactory::M('CustomerDao');
             $customerDao->addBlogCount($this->customer['id']);
             $this->render('10000','Create blog OK!');
         }

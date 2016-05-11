@@ -13,8 +13,7 @@ class CommentDao extends BaseModel {
     private $tablePrim = 'id'; //表的主键 这里为id
 
     public function createComment($blogid,$customerid,$content) {
-        $sql = "insert into $this->tableName (blogid,customerid,content)
-                   values ($blogid,$customerid,$content)";
+        $sql = "insert into $this->tableName (blogid,customerid,content) values ($blogid,$customerid,'$content')";
         return $this->dao->exec($sql);
     }
 

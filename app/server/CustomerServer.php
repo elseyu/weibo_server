@@ -7,7 +7,7 @@
  * Time: 22:20
  */
 class CustomerServer extends BaseServer {
-    
+
     /*
     * @title 查看用户列表接口
     * @action ?server=customer&action=customerList
